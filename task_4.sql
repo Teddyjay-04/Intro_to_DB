@@ -1,14 +1,25 @@
--- task_4.sql
+-- Ensure we're using the correct database
+USE alx_book_store;
 
+-- Check if the 'books' table exists
 SELECT 
-    COLUMN_NAME AS 'Column Name',
-    COLUMN_TYPE AS 'Column Type',
-    IS_NULLABLE AS 'Is Nullable',
-    COLUMN_DEFAULT AS 'Default Value',
-    COLUMN_KEY AS 'Key',
-    EXTRA AS 'Extra Info'
+    TABLE_NAME 
 FROM 
-    information_schema.COLUMNS
+    INFORMATION_SCHEMA.TABLES 
 WHERE 
-    TABLE_SCHEMA = 'alx_book_store' 
+    TABLE_SCHEMA = DATABASE()
+    AND TABLE_NAME = 'books';
+
+-- Display the full description of the 'books' table
+SELECT 
+    COLUMN_NAME,
+    COLUMN_TYPE,
+    IS_NULLABLE,
+    COLUMN_KEY,
+    COLUMN_DEFAULT,
+    EXTRA
+FROM 
+    INFORMATION_SCHEMA.COLUMNS
+WHERE 
+    TABLE_SCHEMA = DATABASE()
     AND TABLE_NAME = 'books';
