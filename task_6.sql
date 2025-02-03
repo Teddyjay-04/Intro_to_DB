@@ -1,9 +1,11 @@
 -- Use the correct database
 USE alx_book_store;
 
--- Insert multiple rows into the customers table
-INSERT INTO customers (customer_id, first_name, last_name, email, address)
-VALUES 
-    (2, 'Blessing', 'Malik', 'bmalik@sandtech.com', '124 Happiness Ave.'),
-    (3, 'Obed', 'Ehoneah', 'eobed@sandtech.com', '125 Happiness Ave.'),
-    (4, 'Nehemial', 'Kamolu', 'nkamolu@sandtech.com', '126 Happiness Ave.');
+-- Check if customer with customer_id = 2 exists
+SELECT * FROM customers WHERE customer_id = 2;
+
+-- Check if customer with customer_id = 3 exists
+SELECT * FROM customers WHERE customer_id = 3;
+
+-- Check if customer with customer_id = 4 exists
+SELECT * FROM customers WHERE customer_id = 4;
